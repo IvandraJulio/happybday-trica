@@ -34,12 +34,11 @@ function loadScript(src) {
 document.addEventListener("DOMContentLoaded", async () => {
   applyTheme(currentMode);
 
-  // Set music source & auto-play
+  // Set music source — set directly on audio element for reliability
   const audio = document.querySelector(".song");
   if (audio && CONFIG.music) {
-    audio.querySelector("source").src = CONFIG.music;
+    audio.src = CONFIG.music;
     audio.load();
-    audio.play().catch(() => {});
   }
 
   // Determine unique component types
@@ -94,7 +93,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   startBtn.addEventListener("mouseout", () => startBtn.style.transform = "translate(-50%, -50%)");
   startBtn.addEventListener("click", () => {
     startBtn.remove();
-    if (audio) audio.play().catch(() => {});
+    if (audio) {
+      audio.volume = 1.0;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn("Audio play failed:", err);
+        });
+      }
+    }
     buildTimeline(rendered);
   });
   document.body.appendChild(startBtn);
