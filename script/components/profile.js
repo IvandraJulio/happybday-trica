@@ -45,7 +45,7 @@
         duration: 0.5, opacity: 0, y: 10,
       }, "-=0.2")
       // Pause to let profile display longer
-      .to(el, { duration: 2, opacity: 1 });
+      .to(el, { duration: 4.5, opacity: 1 });
     },
 
     exit(tl, el) {
