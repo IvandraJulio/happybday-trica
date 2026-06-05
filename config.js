@@ -91,7 +91,7 @@ const CONFIG = {
     },
     {
       type: "profile",
-      wishTitle: "Happy Birthday! RELLL",
+      wishTitle: "Happy Birthday RELLL !!",
       wishText: "semoga apa yang kamu impikan tercapai, dan sehat selalu my mbg gweh",
     },
     {
