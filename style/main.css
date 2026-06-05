@@ -29,12 +29,11 @@ html, body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--sb-bg);
-  background-image:
-    /* Grid texture — subtle squares */
-    linear-gradient(var(--sb-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--sb-grid) 1px, transparent 1px);
-  background-size: 38px 38px;
+  background-image: url('../img/WhatsApp Image 2026-06-05 at 23.12.25.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #2d2640;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
@@ -43,101 +42,8 @@ body {
   overflow: hidden;
 }
 
-/* ── Scrapbook: torn paper navy di kanan atas ──────────────────── */
-body::before {
-  content: '';
-  position: fixed;
-  top: -40px;
-  right: -60px;
-  width: 280px;
-  height: 360px;
-  background: linear-gradient(160deg, var(--sb-navy) 60%, var(--sb-navy-light) 100%);
-  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 85%, 10% 40%);
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.9;
-}
 
-/* ── Scrapbook: torn paper layer 2 (lebih muda) ───────────────── */
-body::after {
-  content: '';
-  position: fixed;
-  top: -20px;
-  right: -30px;
-  width: 220px;
-  height: 280px;
-  background: linear-gradient(150deg, #6878b8 50%, #8898cc 100%);
-  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 5% 80%, 20% 30%);
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.7;
-}
 
-/* ── Scrapbook: bintang-bintang di pojok kanan ─────────────────── */
-.scrapbook-stars {
-  position: fixed;
-  top: 20px;
-  right: 10px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.scrapbook-stars::before,
-.scrapbook-stars::after {
-  content: '★';
-  position: absolute;
-  color: transparent;
-  -webkit-text-stroke: 2.5px white;
-  font-size: 2.2rem;
-  filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
-}
-
-.scrapbook-stars::before {
-  top: 10px;
-  right: 80px;
-  font-size: 2.8rem;
-  transform: rotate(-10deg);
-}
-
-.scrapbook-stars::after {
-  top: 55px;
-  right: 45px;
-  font-size: 1.8rem;
-  transform: rotate(15deg);
-}
-
-/* ── Scrapbook: bunga di pojok kiri atas ──────────────────────── */
-.scrapbook-flower {
-  position: fixed;
-  top: -10px;
-  left: -10px;
-  width: 120px;
-  height: 120px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.scrapbook-flower::before {
-  content: '✿';
-  position: absolute;
-  font-size: 5rem;
-  color: var(--sb-flower);
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  transform: rotate(-20deg);
-  filter: drop-shadow(0 2px 6px rgba(180,160,200,0.4));
-}
-
-.scrapbook-flower::after {
-  content: '✾';
-  position: absolute;
-  font-size: 3rem;
-  color: rgba(200, 185, 220, 0.5);
-  top: 55px;
-  left: 55px;
-  transform: rotate(10deg);
-}
 
 /* ── Audio ──────────────────────────────────────────────────────── */
 .song {
